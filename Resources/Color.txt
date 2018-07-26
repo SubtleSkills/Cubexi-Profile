@@ -1,0 +1,11 @@
+Bg=262938
+Card=2e2f40
+btn1=00ecca
+btn2=4c3ff9
+
+
+
+bg=23252b
+card=282a38
+cblue=412d99
+cpur=9254b7
