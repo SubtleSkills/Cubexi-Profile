@@ -23,7 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private ArrayList<String> mNames = new ArrayList<>();
     private ArrayList<String> mImageUrls = new ArrayList<>();
+    Button a;
     Button b;
+    Button c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         getImages();
 
-        b = (Button)findViewById(R.id.call);
-        b.setOnClickListener(new View.OnClickListener() {
+        a = (Button)findViewById(R.id.call);
+        a.setOnClickListener(new View.OnClickListener()
+        {
             @SuppressLint("MissingPermission")
             @Override
             public void onClick(View v)
@@ -43,6 +46,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        b = (Button)findViewById(R.id.mail);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent mailIntent= new Intent(Intent.ACTION_SENDTO);
+                mailIntent.setData(Uri.parse("mailto:sarkaraayush@gmail.com"));
+                startActivity(mailIntent);
+            }
+        });
+
+        c = (Button)findViewById(R.id.sms);
+        c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent smsIntent= new Intent(Intent.ACTION_SENDTO);
+                smsIntent.setData(Uri.parse("sms:9013353735"));
+                startActivity(smsIntent);
+            }
+        });
 
         double x,y;
         x=0;
